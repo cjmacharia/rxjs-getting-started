@@ -106,7 +106,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexport
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar rxjs_1 = __webpack_require__(/*! rxjs */ \"./node_modules/rxjs/_esm5/index.js\");\nvar data_1 = __webpack_require__(/*! ./data */ \"./data.ts\");\nvar subscribe = function (subscriber) {\n    for (var _i = 0, allBooks_1 = data_1.allBooks; _i < allBooks_1.length; _i++) {\n        var book = allBooks_1[_i];\n        subscriber.next(book);\n    }\n};\nvar allBooksObservable$ = new rxjs_1.Observable(subscribe);\nallBooksObservable$.subscribe(function (book) { return console.log(book.title); });\n\n\n//# sourceURL=webpack:///./index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar rxjs_1 = __webpack_require__(/*! rxjs */ \"./node_modules/rxjs/_esm5/index.js\");\nvar data_1 = __webpack_require__(/*! ./data */ \"./data.ts\");\n// const subscribe = (subscriber: Observer<any>) => {\n// \tfor (let book of allBooks) {\n// \t\tsubscriber.next(book);\n// \t}\n// }\n// let allBooksObservable$ = new Observable(subscribe)\n// allBooksObservable$.subscribe(book => console.log(book.title))\n//of and from are used to create an observable \nvar source1$ = rxjs_1.of(data_1.allBooks);\n// .subscribe(value => console.log(value, 'cjams'))\nvar source2$ = rxjs_1.from(data_1.allBooks);\n// .subscribe(book => console.log(book))\n//return a single observable that has all the values from the two different observables\nrxjs_1.concat(source1$, source2$)\n    .subscribe(function (values) { return console.log(values); });\n\n\n//# sourceURL=webpack:///./index.ts?");
 
 /***/ }),
 
