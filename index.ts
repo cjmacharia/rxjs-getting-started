@@ -1,4 +1,5 @@
 import { Observable, Observer, of, from, fromEvent, concat } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
 import { allBooks, allReaders } from './data';
 
 // const subscribe = (subscriber: Observer<any>) => {
@@ -19,4 +20,28 @@ let source2$ = from(allBooks)
 
 //return a single observable that has all the values from the two different observables
 concat(source1$, source2$)
-	.subscribe(values => console.log(values))
+// .subscribe(values => console.log(values))
+
+// let button = document.getElementById('readersButton');
+
+// fromEvent(button, 'click').subscribe(event => {
+// 	console.log(event)
+// 	let readersDiv = document.getElementById('readers');
+// 	for (let reader of allReaders) {
+// 		readersDiv.innerHTML += reader.name + '<br>'
+// 	}
+// })
+
+let button = document.getElementById('readersButton');
+
+fromEvent(button, 'click')
+	.subscribe(event => {
+		ajax('/api/readers')
+			.subscribe(ajaxResponse => {
+				let readers = ajaxResponse.response
+				let readersDiv = document.getElementById('readers');
+				for (let reader of readers) {
+					readersDiv.innerHTML += reader.name + '<br>'
+				}
+			})
+	})
