@@ -1,0 +1,48 @@
+RxJS
+-----
+-> RxJS is a library for building asynchronous applications with observable sequences.
+
+RxJS Building Blocks
+---------------------
+Observables
+Observers
+Subscriptions
+Operators
+Subjects
+Schedulers
+
+Observable
+-----------
+-> A representation of any set of values over any amount of time
+
+Observers
+---------
+-> Objects with simple interface
+    -next()
+    -error()
+    -complete()
+
+Subscribers
+------------
+
+
+
+Categories of Operators
+------------------------
+Transformation
+Filtering
+Combination
+Utitity
+Conditional
+Aggregate
+Multicasting
+
+Subjects
+-----------
+-> They are both Observables and Observers
+-> They can produce values
+-> Theu have state and maintain a list of observers
+
+
+
+

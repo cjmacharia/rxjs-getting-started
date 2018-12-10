@@ -1,0 +1,31 @@
+{
+	"name": "rxbooktracker",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "concurrently --kill-others \"./node_modules/.bin/webpack --watch\" \"node server.js\""
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"cookie-parser": "^1.4.3",
+		"debug": "^4.0.1",
+		"express": "^4.16.3",
+		"jade": "^1.11.0",
+		"morgan": "^1.9.1",
+		"rxjs": "^6.3.3",
+		"serve-favicon": "^2.5.0"
+	},
+	"devDependencies": {
+		"concurrently": "^4.0.1",
+		"copy-webpack-plugin": "^4.5.2",
+		"ts-loader": "^5.2.1",
+		"typescript": "^3.1.1",
+		"webpack": "^4.20.2",
+		"webpack-cli": "^3.1.2",
+		"webpack-dev-server": "^3.1.9"
+	}
+}
